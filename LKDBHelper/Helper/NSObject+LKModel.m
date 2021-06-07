@@ -8,6 +8,7 @@
 
 #import "LKDBHelper.h"
 #import "NSObject+LKModel.h"
+#import "LKDB+MD5.h"
 #import <objc/runtime.h>
 
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
@@ -86,11 +87,11 @@ static char LKModelBase_Key_Inserting;
 }
 #pragma 无关紧要的
 + (NSString *)getDBImagePathWithName:(NSString *)filename {
-    NSString *dir = [NSString stringWithFormat:@"dbimg/%@", NSStringFromClass(self)];
+    NSString *dir = [NSString stringWithFormat:@"dbimg/%@", NSStringFromClass(self).MD5];
     return [LKDBUtils getPathForDocuments:filename inDir:dir];
 }
 + (NSString *)getDBDataPathWithName:(NSString *)filename {
-    NSString *dir = [NSString stringWithFormat:@"dbdata/%@", NSStringFromClass(self)];
+    NSString *dir = [NSString stringWithFormat:@"dbdata/%@", NSStringFromClass(self).MD5];
     return [LKDBUtils getPathForDocuments:filename inDir:dir];
 }
 #pragma mark - Table Data Function 表数据
