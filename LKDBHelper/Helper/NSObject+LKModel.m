@@ -687,7 +687,7 @@ static char LKModelBase_Key_Inserting;
 
     LKModelInfos *infos;
     [lock lock];
-    NSString *className = NSStringFromClass(self);
+    NSString *className = NSStringFromClass(self).MD5;
     infos = [oncePropertyDic objectForKey:className];
     if (infos == nil) {
         NSMutableArray *pronames = [NSMutableArray array];
