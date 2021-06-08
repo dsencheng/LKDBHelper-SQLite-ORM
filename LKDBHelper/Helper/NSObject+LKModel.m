@@ -87,11 +87,11 @@ static char LKModelBase_Key_Inserting;
 }
 #pragma 无关紧要的
 + (NSString *)getDBImagePathWithName:(NSString *)filename {
-    NSString *dir = [NSString stringWithFormat:@"dbimg/%@", NSStringFromClass(self).MD5];
+    NSString *dir = [NSString stringWithFormat:@"db/img/%@", NSStringFromClass(self).MD5];
     return [LKDBUtils getPathForDocuments:filename inDir:dir];
 }
 + (NSString *)getDBDataPathWithName:(NSString *)filename {
-    NSString *dir = [NSString stringWithFormat:@"dbdata/%@", NSStringFromClass(self).MD5];
+    NSString *dir = [NSString stringWithFormat:@"db/data/%@", NSStringFromClass(self).MD5];
     return [LKDBUtils getPathForDocuments:filename inDir:dir];
 }
 #pragma mark - Table Data Function 表数据
