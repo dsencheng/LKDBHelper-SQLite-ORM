@@ -43,7 +43,7 @@ static char LKModelBase_Key_Inserting;
 }
 #pragma mark Tabel Structure Function 表结构
 + (NSString *)getTableName {
-    return NSStringFromClass(self).MD5;
+    return NSStringFromClass(self);
 }
 
 + (NSString *)getPrimaryKey {
